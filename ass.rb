@@ -44,6 +44,20 @@ module Tijesunimi
 			@notes.delete_at note_id
 		end
 
+		def search search_text
+			checkNoteInput search_text
+			result = {}
+			@notes.each_with_index do |text, index|
+				if !(text =~ /(search_text)/).nil?
+
+					result[index.to_sym] = text
+				end
+			end
+
+			result.each {|index, text| puts "Note ID: #{index}\n #{x}\n\nBy Author #{text}"}
+
+		end
+
 
 
 
