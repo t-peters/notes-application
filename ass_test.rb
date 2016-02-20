@@ -114,6 +114,10 @@ RSpec.describe "NotesApplication" do
 		it 'should return This is the second note for index 0' do
 			expect(author.get 0).to eq "This the second note"
 		end
+
+		it 'should return search results with for the' do
+			author.search('the').equal? "Note ID: 0\n Tijesunimi is a fine boy\n\n By Author Tijesunimi\n"
+		end
 		
 
 	end
@@ -128,6 +132,10 @@ RSpec.describe "NotesApplication" do
 
 		it 'raises error if input is an array' do
 			expect {author.create []}.to raise_error 'Input should be a string'
+		end
+
+		it 'should raise an error if the input is not a string for search' do
+			expect {author.search 4}.to raise_error 'Input should be a string'
 		end
 
 
