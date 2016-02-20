@@ -111,12 +111,21 @@ RSpec.describe "NotesApplication" do
 			expect {author.delete 0}.to change {author.notes.length}.from(3).to(2)
 		end
 
+
 		it 'should return This is the second note for index 0' do
 			expect(author.get 0).to eq "This the second note"
 		end
 
+		it 'should delete index 0' do
+			expect(author.delete 0).to eq "This the second note"
+		end
+
 		it 'should return search results with for the' do
-			author.search('the').equal? "Note ID: 0\n Tijesunimi is a fine boy\n\n By Author Tijesunimi\n"
+			expect(author.search 'all').to eq "Note ID: 0\n Jingle all the way\n\nBy Author Tijesunimi\n"
+		end
+
+		it 'should return search not found' do 
+			expect(author.search 'kulikuli').to eq "No notes found for the seacrh: kulikuli"
 		end
 		
 
@@ -149,7 +158,7 @@ RSpec.describe "NotesApplication" do
 		author.create 'Tijesunimi is a fine boy part 2'
 
 		it 'should check the output of list' do
-			author.list.equal? "Note ID: 0\n Tijesunimi is a fine boy\n\n By Author Tijesunimi\n"
+			expect(author.list).to eq "Note ID: 0\n Tijesunimi is a fine boy\n\nBy Author Tijesunimi\n"
 		end
 
 	end
