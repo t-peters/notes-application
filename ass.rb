@@ -25,7 +25,7 @@ module Tijesunimi
 		def list
 			return [] if @notes.empty?
 			@notes.each do |x|
-				puts "Note ID: #{@notes.index(x)}\n #{x}\n\nBy Author #{@name}"
+				return "Note ID: #{@notes.index(x)}\n #{x}\n\nBy Author #{@name}\n"
 			end
 		end
 
@@ -48,13 +48,16 @@ module Tijesunimi
 			checkNoteInput search_text
 			result = {}
 			@notes.each_with_index do |text, index|
-				if !(text =~ /(search_text)/).nil?
-
-					result[index.to_sym] = text
+				if !(text =~ /(#{search_text})/).nil?
+					result[index] = text
 				end
 			end
 
-			result.each {|index, text| puts "Note ID: #{index}\n #{x}\n\nBy Author #{text}"}
+			if !result.empty?
+				result.each {|index, text| return "Note ID: #{index}\n #{text}\n\nBy Author #{@name}\n"}
+			else
+				return "No notes found for the seacrh: #{search_text}"
+			end
 
 		end
 
