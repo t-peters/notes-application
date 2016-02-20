@@ -11,4 +11,4 @@ It can
   
 ### Test
 This App is using the RSpec unit testing to test the functionalities of the that application
-The test contains about 27 tests testing with the hope or addressing every possible bug in the app
+The test contains about 27 tests with the hope or addressing every possible bug in the app
