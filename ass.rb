@@ -24,8 +24,8 @@ module Tijesunimi
 
 		def list
 			return [] if @notes.empty?
-			@notes.each do |x|
-				return "Note ID: #{@notes.index(x)}\n #{x}\n\nBy Author #{@name}\n"
+			@notes.collect do |x|
+				"Note ID: #{@notes.index(x)}\n #{x}\n\nBy Author #{@name}\n\n"
 			end
 		end
 
@@ -54,7 +54,7 @@ module Tijesunimi
 			end
 
 			if !result.empty?
-				result.each {|index, text| return "Note ID: #{index}\n #{text}\n\nBy Author #{@name}\n"}
+				result.collect {|index, text| "Note ID: #{index}\n #{text}\n\nBy Author #{@name}\n\n"}
 			else
 				return "No notes found for the seacrh: #{search_text}"
 			end

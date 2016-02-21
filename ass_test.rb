@@ -121,7 +121,7 @@ RSpec.describe "NotesApplication" do
 		end
 
 		it 'should return search results with for the' do
-			expect(author.search 'all').to eq "Note ID: 0\n Jingle all the way\n\nBy Author Tijesunimi\n"
+			expect(author.search('all')[0]).to eq "Note ID: 0\n Jingle all the way\n\nBy Author Tijesunimi\n\n"
 		end
 
 		it 'should return search not found' do 
@@ -158,7 +158,7 @@ RSpec.describe "NotesApplication" do
 		author.create 'Tijesunimi is a fine boy part 2'
 
 		it 'should check the output of list' do
-			expect(author.list).to eq "Note ID: 0\n Tijesunimi is a fine boy\n\nBy Author Tijesunimi\n"
+			expect(author.list[-1]).to eq "Note ID: 1\n Tijesunimi is a fine boy part 2\n\nBy Author Tijesunimi\n\n"
 		end
 
 	end
