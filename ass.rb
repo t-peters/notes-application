@@ -54,6 +54,7 @@ module Tijesunimi
 			end
 
 			if !result.empty?
+				puts "Showing results for search ‘<#{search_text}>’"
 				result.collect {|index, text| "Note ID: #{index}\n #{text}\n\nBy Author #{@name}\n\n"}
 			else
 				return "No notes found for the seacrh: #{search_text}"

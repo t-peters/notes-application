@@ -2,6 +2,7 @@ require "./ass"
 include Tijesunimi
 
 def start
+    
 	puts "Please Enter the Authors name: "
 	author_name = gets.chomp
 	$author = NotesApplication.new author_name
@@ -50,6 +51,8 @@ def search
     search = gets.chomp
 
     puts "Searching..........."
+
+
     puts $author.search search
 
     ask
