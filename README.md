@@ -1,7 +1,11 @@
 # Notes Application
+<<<<<<< HEAD
 [![Code Climate](https://codeclimate.com/repos/56cb0382e6f1287c57007495/badges/b2a008a7244975a0c6b5/gpa.svg)](https://codeclimate.com/repos/56cb0382e6f1287c57007495/feed)
 [![Issue Count](https://codeclimate.com/repos/56cb0382e6f1287c57007495/badges/b2a008a7244975a0c6b5/issue_count.svg)](https://codeclimate.com/repos/56cb0382e6f1287c57007495/feed)
 
+=======
+[![Test Coverage](https://codeclimate.com/repos/56cb0382e6f1287c57007495/badges/b2a008a7244975a0c6b5/coverage.svg)](https://codeclimate.com/repos/56cb0382e6f1287c57007495/coverage)
+>>>>>>> ch-refactor
 This is a simple note application that can instantiate a new author for a particular note collection
 
 It can 
