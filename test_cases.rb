@@ -1,4 +1,4 @@
-require './ass'
+require './notes_application'
 include Tijesunimi
 
 RSpec.describe "NotesApplication" do
