@@ -1,4 +1,4 @@
-require "./ass"
+require "./notes_application"
 include Tijesunimi
 
 def start
@@ -81,12 +81,11 @@ def ask
         when 'list' then list
         when 'delete' then delete
         when 'search' then search
-        else ask
         end
 
     end
 
 end
 
-start
+
 

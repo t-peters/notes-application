@@ -10,8 +10,6 @@ module Tijesunimi
 			@notes = []
 		end
 
-		public
-
 		def create note_content
 			checkNoteInput note_content
 			@notes << note_content
