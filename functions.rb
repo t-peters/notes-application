@@ -61,23 +61,35 @@ end
 
 
 def ask
+    puts
     puts "Do you wnat to perform another action?(y/n): "
     answer = gets.chomp.downcase
+    puts
     
     if answer == 'y'
         puts "What do you want to do?: "
         puts "Choose from the following: "
         print '> create < ',' > edit < ',' > list < ',' > delete < ',' > search < '
+        puts
+        puts
 
         action = gets.chomp.downcase
 
-        case action
-        when 'create' then create
-        when 'edit' then edit
-        when 'list' then list
-        when 'delete' then delete
-        when 'search' then search
-        end
+        # case action
+        # when 'create' then create
+        # when 'edit' then edit
+        # when 'list' then list
+        # when 'delete' then delete
+        # when 'search' then search
+        # else ask
+        # end
+
+        create if action == 'create'
+        edit if action == 'edit'
+        list if action == 'list'
+        delete if action == 'delete'
+        search if action == 'search'
+
 
     end
 
