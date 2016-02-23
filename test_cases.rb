@@ -71,7 +71,7 @@ RSpec.describe "NotesApplication" do
 		end
 
 		it 'returns the last note in notes' do
-			expect(author.get -1).to eq 'Jingle all the way'
+			expect(author.get(-1)).to eq 'Jingle all the way'
 		end
 
 		it 'returns the second note in notes' do
