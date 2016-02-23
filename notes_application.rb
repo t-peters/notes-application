@@ -10,8 +10,6 @@ module Tijesunimi
 			@notes = []
 		end
 
-		public
-
 		def create note_content
 			checkNoteInput note_content
 			@notes << note_content
@@ -24,7 +22,7 @@ module Tijesunimi
 
 		def list
 			return [] if @notes.empty?
-			@notes.collect do |x|
+			@notes.map do |x|
 				"Note ID: #{@notes.index(x)}\n #{x}\n\nBy Author #{@name}\n\n"
 			end
 		end
@@ -55,7 +53,7 @@ module Tijesunimi
 
 			if !result.empty?
 				puts "Showing results for search ‘<#{search_text}>’"
-				result.collect {|index, text| "Note ID: #{index}\n #{text}\n\nBy Author #{@name}\n\n"}
+				result.map {|index, text| "Note ID: #{index}\n #{text}\n\nBy Author #{@name}\n\n"}
 			else
 				return "No notes found for the seacrh: #{search_text}"
 			end

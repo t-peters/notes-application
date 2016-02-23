@@ -1,4 +1,4 @@
-require "./ass"
+require "./notes_application"
 include Tijesunimi
 
 def start
@@ -61,12 +61,13 @@ end
 
 
 def ask
-    puts
-    puts "Do you wnat to perform another action?(y/n): "
-    answer = gets.chomp.downcase
-    puts
+    answer = 'y'
     
-    if answer == 'y'
+    while answer == 'y'
+        puts
+        puts "Do you wnat to perform another action?(y/n): "
+        answer = gets.chomp.downcase
+        puts
         puts "What do you want to do?: "
         puts "Choose from the following: "
         print '> create < ',' > edit < ',' > list < ',' > delete < ',' > search < '
@@ -81,12 +82,19 @@ def ask
         when 'list' then list
         when 'delete' then delete
         when 'search' then search
-        else ask
+        
         end
+
+        # create if action == 'create'
+        # edit if action == 'edit'
+        # list if action == 'list'
+        # delete if action == 'delete'
+        # search if action == 'search'
+
 
     end
 
 end
 
-start
+
 
